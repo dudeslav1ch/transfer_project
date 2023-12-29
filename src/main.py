@@ -1,13 +1,11 @@
-from transfer import Transfer
 from config import DATA
+from src.transfer import get_true_list_operations, sort_list, get_transfer_info
 
 
 def main():
-    transfers = Transfer()
-    transfers.get_list_operations(DATA)
-    transfers.get_true_list_operations(transfers.list_transfer)
-    transfers.sort_list(transfers.list_transfer)
-    print(transfers.get_transfer_info())
+    operations_data = get_true_list_operations(DATA)
+    true_list_operations = sort_list(operations_data)
+    print(get_transfer_info(true_list_operations))
 
 
 main()
